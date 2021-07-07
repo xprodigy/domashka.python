@@ -10,9 +10,11 @@ class Matrix:
         self.result = []
         for i in range(len(self.list_matrix)):
             self.result.append(list(map(sum, zip(self.list_matrix[i], other.list_matrix[i]))))
-        return '\n'.join(['\t'.join(map(str, i)) for i in self.result])
+
+        return Matrix(self.result)
 
     def __str__(self):
+
         return '\n'.join(['\t'.join(map(str, i)) for i in self.list_matrix])
 
 
@@ -30,4 +32,4 @@ matrix_2 = Matrix(matrix_2)
 print(f"{matrix_1} \n")
 print(f"{matrix_2} \n")
 
-print(matrix_1 + matrix_2)
+print(matrix_1 + matrix_2 + matrix_1 + matrix_2)
